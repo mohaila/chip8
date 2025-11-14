@@ -2,6 +2,9 @@
 
 #include "loader.hpp"
 
+using std::chrono::milliseconds;
+using std::this_thread::sleep_for;
+
 Chip8Emulator::Chip8Emulator(Chip8HardwareManager* hm) : hardwareManager(hm) {
   FontLoader fontLoader{};
   fontLoader.loadFont(chip8);
@@ -18,6 +21,15 @@ void Chip8Emulator::execute(const string& romfile) {
       chip8.execute();
       hardwareManager->display(chip8.video);
       run = hardwareManager->handleKeys(chip8.keyboard);
+
+      if (chip8.delayTimer > 0) {
+        chip8.delayTimer--;
+      }
+      if (chip8.soundTimer > 0) {
+        chip8.soundTimer--;
+      }
+
+      sleep_for(milliseconds(CHIP8_DELAY));
     }
   }
 }

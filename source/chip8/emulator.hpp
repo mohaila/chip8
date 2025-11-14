@@ -2,6 +2,8 @@
 
 #include "chip8.hpp"
 
+#define CHIP8_DELAY 10
+
 using std::string;
 
 class Chip8HardwareManager {
