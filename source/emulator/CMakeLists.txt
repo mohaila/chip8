@@ -8,7 +8,7 @@ target_include_directories(${TARGET} PRIVATE
 target_link_libraries(${TARGET} PRIVATE
     Chip8
     Manager
-    SDL2
+    raylib
 )
 
 target_precompile_headers(${TARGET} PRIVATE pch.h)

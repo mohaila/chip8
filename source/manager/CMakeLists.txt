@@ -1,12 +1,13 @@
 set(TARGET Manager)
-set(SRC sdlmanager.cpp)
+set(SRC raymanager.cpp)
 
 add_library(${TARGET} SHARED ${SRC})
 target_include_directories(${TARGET} PRIVATE 
     ${CMAKE_SOURCE_DIR}/source
+    ${CMAKE_SOURCE_DIR}/include
 )
 target_link_libraries(${TARGET} PRIVATE
-    SDL2
+    raylib
 )
 
 target_precompile_headers(${TARGET} PRIVATE pch.h)

@@ -6,6 +6,7 @@ C++ project for CHIP-8 emulator:
 - source/emulator code for CHIP-8 emulator using previous libraries
 - tests/cip8-tests code for testing chip8 library
 - extern/googletest-1.17.0 
+- extern/raylib-5.5
 
 If your include/libs are not in standard locations expected by compiler/linker, modify CMakeLists.txt to use your paths:
 ```
