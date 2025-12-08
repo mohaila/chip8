@@ -5,7 +5,8 @@ add_library(${TARGET} SHARED ${SRC})
 target_include_directories(${TARGET} PRIVATE 
     ${CMAKE_SOURCE_DIR}/source
 )
-target_link_libraries(${TARGET} PRIVATE 
+target_link_libraries(${TARGET} PRIVATE
+    SDL2
 )
 
 target_precompile_headers(${TARGET} PRIVATE pch.h)
